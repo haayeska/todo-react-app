@@ -1,0 +1,47 @@
+{
+  "tarefas": [
+    {
+      "id": "d81e",
+      "titulo": "batata",
+      "categoria": "Estudos",
+      "situacao": "ativa"
+    },
+    {
+      "id": "4f7f",
+      "titulo": "Fazer planilha",
+      "categoria": "Trabalho",
+      "situacao": "ativa"
+    },
+    {
+      "id": "f92e",
+      "titulo": "Academia",
+      "categoria": "Pessoal",
+      "situacao": "ativa"
+    },
+    {
+      "id": "9081",
+      "titulo": "Aniversario ",
+      "categoria": "Pessoal",
+      "situacao": "ativa"
+    },
+    {
+      "id": "3aa1",
+      "titulo": "Ir correr 12:00",
+      "categoria": "Pessoal",
+      "situacao": "ativa"
+    },
+    {
+      "id": "253f",
+      "titulo": "Passear com o cachorro",
+      "categoria": "Pessoal",
+      "situacao": "ativa"
+    },
+    {
+      "id": "875f",
+      "titulo": "Reunião 15:00",
+      "categoria": "Trabalho",
+      "situacao": "ativa"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

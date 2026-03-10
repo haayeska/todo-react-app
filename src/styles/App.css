@@ -1,0 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;  
+}
+
+.todoApp {
+  background-image: url('../assets/fundo1.jpg'); 
+  background-repeat: no-repeat;    
+  background-size: cover;            
+  background-position: center;       
+  min-height: 100vh;  
+}
+

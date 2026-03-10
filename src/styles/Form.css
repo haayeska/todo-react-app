@@ -1,0 +1,50 @@
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.formulario {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  padding: 10px 20px 5px 20px;
+}
+
+.inputEnviar {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+  size: 16px;
+  padding: 7px;
+  margin: 10px;
+  background: transparent;
+  border-color: transparent;
+  color: rgb(119, 115, 115)
+}
+
+.selecao {
+  padding: 8px;
+  border-radius: 40px;
+  border-color: transparent;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background: transparent;
+  color: rgb(119, 115, 115);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.btn-enviar {
+  padding: 12px;
+  border-radius: 40px;
+  border-color: transparent;
+  z-index: 1;
+  background: transparent;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  color: rgb(119, 115, 115);
+  cursor: pointer;
+}
+.btn-enviar:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  
+}
