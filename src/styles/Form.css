@@ -4,12 +4,14 @@
   align-items: center;
   padding: 20px;
 }
+
 .formulario {
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(6px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
   border-radius: 50px;
   padding: 10px 20px 5px 20px;
+  
 }
 
 .inputEnviar {
@@ -20,7 +22,11 @@
   margin: 10px;
   background: transparent;
   border-color: transparent;
-  color: rgb(119, 115, 115)
+  color: rgb(0, 0, 0)
+}
+
+.inputEnviar::placeholder {
+  color: black;
 }
 
 .selecao {
@@ -30,7 +36,7 @@
   margin-right: 10px;
   margin-bottom: 10px;
   background: transparent;
-  color: rgb(119, 115, 115);
+  color: rgb(0, 0, 0);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
@@ -41,10 +47,17 @@
   z-index: 1;
   background: transparent;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-  color: rgb(119, 115, 115);
+  color: rgb(0, 0, 0);
   cursor: pointer;
 }
 .btn-enviar:hover {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-  
+ box-shadow: 0 12px 40px rgba(3, 3, 3, 0.4);
+ transform: translateY(-2px);
 }
+.erro {
+  color: rgb(97, 17, 17);
+  margin: 5px 10px;
+  font-size: 15px;
+  text-align: center;
+}
+  

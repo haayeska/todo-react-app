@@ -1,45 +1,69 @@
 {
   "tarefas": [
     {
-      "id": "d81e",
-      "titulo": "batata",
-      "categoria": "Estudos",
-      "situacao": "ativa"
-    },
-    {
-      "id": "4f7f",
-      "titulo": "Fazer planilha",
-      "categoria": "Trabalho",
-      "situacao": "ativa"
-    },
-    {
-      "id": "f92e",
-      "titulo": "Academia",
-      "categoria": "Pessoal",
-      "situacao": "ativa"
-    },
-    {
       "id": "9081",
       "titulo": "Aniversario ",
       "categoria": "Pessoal",
-      "situacao": "ativa"
+      "situacao": "concluida"
     },
     {
       "id": "3aa1",
       "titulo": "Ir correr 12:00",
       "categoria": "Pessoal",
-      "situacao": "ativa"
+      "situacao": "concluida"
     },
     {
       "id": "253f",
-      "titulo": "Passear com o cachorro",
+      "titulo": "Passear com o cachorro hj",
       "categoria": "Pessoal",
-      "situacao": "ativa"
+      "situacao": "concluida"
     },
     {
       "id": "875f",
       "titulo": "Reunião 15:00",
       "categoria": "Trabalho",
+      "situacao": "ativa"
+    },
+    {
+      "id": "9fbc",
+      "titulo": "estudar js",
+      "categoria": "Estudos",
+      "situacao": "ativa"
+    },
+    {
+      "id": "0eee",
+      "titulo": "dormir",
+      "categoria": "Pessoal",
+      "situacao": "ativa"
+    },
+    {
+      "id": "8680",
+      "titulo": "ficar menos estressada ",
+      "categoria": "Pessoal",
+      "situacao": "ativa"
+    },
+    {
+      "id": "0403",
+      "titulo": "jogar the sims 4",
+      "categoria": "Pessoal",
+      "situacao": "ativa"
+    },
+    {
+      "id": "4a0a",
+      "titulo": "baixar mais mods",
+      "categoria": "Pessoal",
+      "situacao": "ativa"
+    },
+    {
+      "id": "4518",
+      "titulo": "fazer um crud usando react",
+      "categoria": "Estudos",
+      "situacao": "ativa"
+    },
+    {
+      "id": "5480",
+      "titulo": "terminar curso de react",
+      "categoria": "Estudos",
       "situacao": "ativa"
     }
   ],

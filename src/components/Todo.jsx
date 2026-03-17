@@ -1,5 +1,6 @@
-import Button from './Button';
 import { useState } from 'react';
+
+import Button from './Button';
 import '../styles/Todo.css';
 
 function Todo({
@@ -10,6 +11,7 @@ function Todo({
 }) {
   const [idTarefaEdicao, setIdTarefaEdicao] = useState(null);
   const [tituloEditado, setTituloEditado] = useState('');
+  const [filtro, setFiltro] = useState(['todas']);
 
   async function salvarEdicao(id) {
     try {
@@ -32,19 +34,69 @@ function Todo({
     }
   }
 
+  // Função para alternar o filtro
+  function toggleFiltro(categoria) {
+    if (categoria.toLowerCase() === 'todas') {
+      setFiltro(['todas']);
+      return;
+    }
+
+    // remove todas se estava selecionado
+    let novoFiltro = filtro.filter((f) => f !== 'todas');
+
+    if (novoFiltro.includes(categoria.toLowerCase())) {
+      // já selecionado → remove
+      novoFiltro = novoFiltro.filter((f) => f !== categoria.toLowerCase());
+    } else {
+      // não selecionado → adiciona
+      novoFiltro.push(categoria.toLowerCase());
+    }
+
+    // se não sobrar nada → volta pra todas
+    if (novoFiltro.length === 0) {
+      novoFiltro = ['todas'];
+    }
+    setFiltro(novoFiltro);
+  }
+  // Filtra as tarefas com base no filtro selecionado
+  const tarefasFiltradas = tarefas.filter((tarefa) => {
+    if (filtro.includes('todas')) return true;
+    return filtro.includes(tarefa.categoria.toLowerCase());
+  });
   return (
     <div className="containerGeral">
-      {tarefas.map(({ id, titulo, categoria, situacao }) => {
+      <div className="filtroContainer">
+        <button
+          className={`filtrobtn ${filtro.includes('todas') ? 'ativo' : ''}`}
+          onClick={() => toggleFiltro('Todas')}
+        >
+          Todas
+        </button>
+        <button
+          className={`filtrobtn ${filtro.includes('trabalho') ? 'ativo' : ''}`}
+          onClick={() => toggleFiltro('Trabalho')}
+        >
+          Trabalho
+        </button>
+        <button
+          className={`filtrobtn ${filtro.includes('estudos') ? 'ativo' : ''}`}
+          onClick={() => toggleFiltro('Estudos')}
+        >
+          Estudos
+        </button>
+        <button
+          className={`filtrobtn ${filtro.includes('pessoal') ? 'ativo' : ''}`}
+          onClick={() => toggleFiltro('Pessoal')}
+        >
+          Pessoal
+        </button>
+      </div>
+
+      {tarefasFiltradas.map(({ id, titulo, categoria, situacao }) => {
         if (id === idTarefaEdicao) {
           return (
             <form className="todoTarefa" key={id}>
               <div className="descricao">
-                <input
-                  className="checkbox"
-                  type="checkbox"
-                  checked={situacao != 'ativa'}
-                  onClick={() => salvarSituacao(id, situacao)}
-                />
                 <div className="textos">
                   <input
                     className="inputEdicao"
@@ -54,7 +106,7 @@ function Todo({
                   />
                   <p className="categoria">{categoria}</p>
                 </div>
-                <div className="botoes">
+                <div className="botoes edicao">
                   <Button
                     className="btn"
                     text="Salvar"
@@ -76,20 +128,31 @@ function Todo({
         return (
           <div className="todoTarefa" key={id}>
             <div className="descricao">
-              <input className="checkbox" type="checkbox" />
+              <input
+                className="checkbox"
+                type="checkbox"
+                checked={situacao != 'ativa'}
+                onClick={() => salvarSituacao(id, situacao)}
+              />
               <div className="textos">
-                <p className="titulo">{titulo}</p>
+                <p
+                  className={`titulo ${situacao === 'concluida' ? 'tarefa-concluida' : ''}`}
+                >
+                  {titulo}
+                </p>
                 <p className="categoria">{categoria}</p>
               </div>
               <div className="botoes">
-                <Button
-                  className="btn"
-                  text="Editar"
-                  onClick={() => {
-                    setIdTarefaEdicao(id);
-                    setTituloEditado(titulo);
-                  }}
-                />
+                {situacao === 'ativa' && (
+                  <Button
+                    className="btn"
+                    text="Editar"
+                    onClick={() => {
+                      setIdTarefaEdicao(id);
+                      setTituloEditado(titulo);
+                    }}
+                  />
+                )}
                 <Button
                   className="btn"
                   text="Deletar"

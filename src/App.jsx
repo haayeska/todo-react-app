@@ -6,6 +6,11 @@ import Todo from './components/Todo';
 
 function App() {
   const [tarefas, setTarefas] = useState([]);
+  const [tarefa, setTarefa] = useState({
+    titulo: '',
+    categoria: '',
+    situacao: 'ativa',
+  });
 
   // Enviar tarefa
   const adicionarTarefa = (tarefa) => {
@@ -64,7 +69,7 @@ function App() {
   };
   const atualizarSituacaoTarefa = (id, situacao) => {
     fetch(`http://localhost:3000/tarefas/${id}`, {
-      method: 'PUT',
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -85,12 +90,17 @@ function App() {
 
   return (
     <div className="todoApp">
-      <Form adicionarTarefa={adicionarTarefa} />
+      <Form
+        adicionarTarefa={adicionarTarefa}
+        tarefa={tarefa}
+        setTarefa={setTarefa}
+      />
       <Todo
         tarefas={tarefas}
         deletarTarefa={deletarTarefa}
         editarTarefa={atualizarTarefa}
         atualizarSituacaoTarefa={atualizarSituacaoTarefa}
+        tarefa={tarefa}
       />
     </div>
   );
